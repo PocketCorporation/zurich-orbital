@@ -1,8 +1,8 @@
 import React from 'react'
 
-import HeaderBox from '@/components/HeaderBox'
-import TotalBalanceBox from '@/components/TotalBalanceBox'
-import AnimatedCounter from '@/components/AnimatedCounter'
+import HeaderBox from '@/components/ui/HeaderBox'
+import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
+import AnimatedCounter from '@/components/ui/AnimatedCounter'
 
 const Home = () => {
   const loggedIn = {firstName:'Kell'}
