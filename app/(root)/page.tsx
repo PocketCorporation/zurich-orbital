@@ -6,7 +6,7 @@ import AnimatedCounter from '@/components/ui/AnimatedCounter'
 import RightSidebar from '@/components/ui/RightSidebar'
 
 const Home = () => {
-  const loggedIn = {firstName:'Kell', lastNmae:'Jorris',email:'contact@Zorbital.sub'}
+  const loggedIn = {firstName:'Kell', lastName:'Jorris', email:'contact@Zorbital.sub'}
 
   return (
     <section className='home'>
@@ -32,7 +32,7 @@ const Home = () => {
       <RightSidebar 
         user={loggedIn}
         transactions={[]}
-        banks={[]}
+        banks={[{currentBalance: 123.50}, {currentBalance: 500}]}
       />
     </section>
   )
