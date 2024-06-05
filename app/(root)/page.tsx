@@ -3,9 +3,10 @@ import React from 'react'
 import HeaderBox from '@/components/ui/HeaderBox'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
 import AnimatedCounter from '@/components/ui/AnimatedCounter'
+import RightSidebar from '@/components/ui/RightSidebar'
 
 const Home = () => {
-  const loggedIn = {firstName:'Kell'}
+  const loggedIn = {firstName:'Kell', lastNmae:'Jorris',email:'contact@Zorbital.sub'}
 
   return (
     <section className='home'>
@@ -24,7 +25,15 @@ const Home = () => {
             totalCurrentBalance={1250.35}
           />
         </header>
+
+        RECENT TRANSACTIONS
       </div>
+
+      <RightSidebar 
+        user={loggedIn}
+        transactions={[]}
+        banks={[]}
+      />
     </section>
   )
 }
