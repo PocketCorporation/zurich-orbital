@@ -4,9 +4,10 @@ import HeaderBox from '@/components/ui/HeaderBox'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
 import AnimatedCounter from '@/components/ui/AnimatedCounter'
 import RightSidebar from '@/components/ui/RightSidebar'
+import { getLoggedInUser } from '@/lib/actions/user.actions'
 
-const Home = () => {
-  const loggedIn = {firstName:'Kell', lastName:'Jorris', email:'contact@Zorbital.sub'}
+const Home = async () => {
+  const loggedIn = await getLoggedInUser() || {firstName:'Kell', lastName:'Jorris', email:'contact@Zorbital.sub'}
 
   return (
     <section className='home'>
