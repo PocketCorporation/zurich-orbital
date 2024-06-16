@@ -21,12 +21,14 @@ import {
 import { Input } from "@/components/ui/input";
 import CustomInput from "./CustomInput";
 import { Loader2 } from "lucide-react";
-import SignUp from "@/app/(auth)/sign-up/page";
-import SignIn from "@/app/(auth)/sign-in/page";
+
 
 import { useRouter } from "next/navigation";
+import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
+
 
 const AuthForm = ({ type }: { type: string }) => {
+  const router = useRouter()
   const [user, setUser] = useState(null);
   const [isLoading, setisLoading] = useState(false);
 
@@ -49,10 +51,9 @@ const AuthForm = ({ type }: { type: string }) => {
       // Sign up with Appwrite & create plaid token
 
       if(type==='sign-up'){
-        const userData = {
-          // const newUser = await signUp(data)
-          // setUser(newUser)
-        }
+          const newUser = await signUp(data)
+          setUser(newUser)
+        
       }
 
       if(type==='sign-in'){
@@ -144,6 +145,8 @@ const AuthForm = ({ type }: { type: string }) => {
                     placeholder='Eample: 11101'
                     />
                   </div>
+                  <div>
+
                     <CustomInput 
                     control={form.control}
                     name='dateOfBirth'
@@ -156,6 +159,7 @@ const AuthForm = ({ type }: { type: string }) => {
                     label='SSN'
                     placeholder='Example: 1234'
                     />
+                    </div>
                 </>
               )}
 
