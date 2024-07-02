@@ -7,7 +7,8 @@ import RightSidebar from '@/components/ui/RightSidebar'
 import { getLoggedInUser } from '@/lib/actions/user.actions'
 
 const Home = async () => {
-  const loggedIn = await getLoggedInUser() || {firstName:'Kell', lastName:'Jorris', email:'contact@Zorbital.sub'}
+  const loggedIn = await getLoggedInUser() 
+  || {firstName:'Kell', lastName:'Jorris', email:'contact@Zorbital.sub'}
 
   return (
     <section className='home'>
@@ -16,7 +17,7 @@ const Home = async () => {
           <HeaderBox 
             type='greeting'
             title='Welcome'
-            user={loggedIn?.firstName||'Guest'}
+            user={loggedIn?.name ||'Guest'}
             subtext='Access and manage your account and transactions efficiently'
           />
 

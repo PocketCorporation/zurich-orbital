@@ -25,6 +25,7 @@ import { Loader2 } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
+import PlaidLink from "./PlaidLink";
 
 
 const AuthForm = ({ type }: { type: string }) => {
@@ -81,7 +82,7 @@ const AuthForm = ({ type }: { type: string }) => {
             alt="Horizon Logo"
           />
           <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-            Horizon
+            Zurich Orbital
           </h1>
         </Link>
 
@@ -96,9 +97,11 @@ const AuthForm = ({ type }: { type: string }) => {
           </h1>
         </div>
       </header>
-      {user ? (
-        <div className="flex flex-col gap-4">{/* PlaidLink */}</div>
-      ) : (
+      {/* {user ? ( */}
+        <div className="flex flex-col gap-4">
+          <PlaidLink user={user} variant='primary' />
+          </div>
+      {/* ) : ( */}
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -183,11 +186,11 @@ const AuthForm = ({ type }: { type: string }) => {
                     <Loader2 size={20} className="animate-spin" /> &nbsp;
                     Loading...
                   </>
-                ) : type === "sign-in" ? (
+                ) : type === "sign-in" ? 
                   "Sign In"
-                ) : (
+                 : 
                   "Sign Up"
-                )}
+                }
               </Button>
               </div>
             </form>
@@ -206,7 +209,7 @@ const AuthForm = ({ type }: { type: string }) => {
             </Link>
           </footer>
         </>
-      )}
+      {/* )} */}
     </section>
   );
 };
